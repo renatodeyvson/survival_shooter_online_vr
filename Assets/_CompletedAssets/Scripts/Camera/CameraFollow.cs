@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 namespace CompleteProject
 {
-    public class CameraFollow : MonoBehaviour
+    public class CameraFollow : NetworkBehaviour
     {
 
         public Transform target;            // The position that that camera will be following.
@@ -20,8 +21,24 @@ namespace CompleteProject
         }
 
 
+        public void getLocalPlayer()
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+            for (int i = 0; i < players.Length; i++)
+            {
+                if(players[i].GetComponent<NetworkBehaviour>().isLocalPlayer)
+                    target = players[i].transform;
+            }
+        }
+
         void FixedUpdate ()
         {
+            if (target == null) {
+                getLocalPlayer();
+                return;
+            }
+            
             // Create a postion the camera is aiming for based on the offset from the target.
             //Vector3 targetCamPos = target.position + offset;
 
@@ -30,6 +47,7 @@ namespace CompleteProject
 
             //Iguala a posição
             transform.position = target.position;
+            target.rotation = transform.rotation;
         }
     }
 }

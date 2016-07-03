@@ -34,13 +34,41 @@ namespace CompleteProject
 
             // Set the initial health of the player.
             currentHealth = startingHealth;
+
+
+            Image[] images = GameObject.FindObjectsOfType<Image>();
+
+            for (int i = 0; i < images.Length; i++)
+            {
+                if (images[i].name.Contains("Damage"))
+                {
+                    damageImage = images[i];
+                }
+            }
+
+            Slider[] sliders = GameObject.FindObjectsOfType<Slider>();
+
+            for (int i = 0; i < sliders.Length; i++)
+            {
+                if (sliders[i].name.Contains("Health"))
+                {
+                    healthSlider = sliders[i];
+                }
+            }
+
+
         }
 
 
         void Update ()
         {
+            Damaged();
+        }
+
+        void Damaged()
+        {
             // If the player has just been damaged...
-            if(damaged)
+            if (damaged)
             {
                 // ... set the colour of the damageImage to the flash colour.
                 damageImage.color = flashColour;
@@ -49,7 +77,7 @@ namespace CompleteProject
             else
             {
                 // ... transition the colour back to clear.
-                damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             }
 
             // Reset the damaged flag.

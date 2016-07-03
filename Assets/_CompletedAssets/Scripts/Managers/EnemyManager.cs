@@ -20,7 +20,8 @@ namespace CompleteProject
         void Spawn ()
         {
             // If the player has no health left...
-            if(playerHealth.currentHealth <= 0f)
+            GameOverManager gameOver = GameObject.FindObjectOfType<GameOverManager>();
+            if(gameOver.isGameOver())
             {
                 // ... exit the function.
                 return;
