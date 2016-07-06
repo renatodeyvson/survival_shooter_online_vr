@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 namespace CompleteProject
 {
@@ -103,7 +104,7 @@ namespace CompleteProject
             ScoreManager.score += scoreValue;
 
             // After 2 seconds destory the enemy.
-            Destroy (gameObject, 2f);
+            NetworkServer.Destroy(gameObject);
         }
     }
 }

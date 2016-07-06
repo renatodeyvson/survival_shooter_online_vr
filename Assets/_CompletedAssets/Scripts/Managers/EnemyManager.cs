@@ -10,19 +10,21 @@ namespace CompleteProject
         public float spawnTime = 3f;            // How long between each spawn.
         public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
         public const int MONSTER_GROUP = 3;
-        private bool isCalling = false;
+
+        public bool isCalling = false;
 
         void Update()
         {
             // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
+            
             if (!isCalling)
             {
-                if (isServer)
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                if (players.Length > 1 && isServer)
                 {
                     InvokeRepeating("Spawn", spawnTime, spawnTime);
                     isCalling = true;
                 }
-                Debug.Log("spawning?");
             }
 
         }

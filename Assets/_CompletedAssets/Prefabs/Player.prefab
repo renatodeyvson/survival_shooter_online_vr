@@ -46,6 +46,7 @@ GameObject:
   - 120: {fileID: 12000000}
   - 114: {fileID: 11400000}
   - 108: {fileID: 10800000}
+  - 114: {fileID: 11464306}
   m_Layer: 0
   m_Name: GunBarrelEnd
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Transform:
   m_LocalRotation: {x: 0.44829786, y: 0.44829786, z: -0.5468355, w: 0.5468355}
   m_LocalPosition: {x: 0.42256805, y: 0.2720632, z: -0.17690624}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 78.6901, y: 0, z: -90}
   m_Children: []
   m_Father: {fileID: 400006}
   m_RootOrder: 1
@@ -127,7 +128,7 @@ Transform:
   m_LocalRotation: {x: 0.004913834, y: 0, z: 0, w: 0.99998796}
   m_LocalPosition: {x: 0.42256805, y: 0.3097692, z: 0.74614936}
   m_LocalScale: {x: 0.99999994, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.5631, y: 0, z: 0}
   m_Children:
   - {fileID: 400008}
   m_Father: {fileID: 400006}
@@ -157,7 +158,7 @@ Transform:
   m_LocalRotation: {x: -0.004913834, y: 0, z: 0, w: 0.99998796}
   m_LocalPosition: {x: 0, y: 0.3313, z: 0.8591}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.5631, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 0
@@ -222,13 +223,13 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 0.53
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -250,7 +251,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &8200002
 AudioSource:
   m_ObjectHideFlags: 1
@@ -497,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
+  m_TransformSyncMode: 1
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -506,6 +507,38 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &11464306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 78
+    i1: 90
+    i2: 13
+    i3: 56
+    i4: 125
+    i5: 194
+    i6: 115
+    i7: 148
+    i8: 184
+    i9: 22
+    i10: 0
+    i11: 152
+    i12: 138
+    i13: 208
+    i14: 33
+    i15: 111
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1

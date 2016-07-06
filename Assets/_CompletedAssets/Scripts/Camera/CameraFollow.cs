@@ -38,7 +38,7 @@ namespace CompleteProject
                 getLocalPlayer();
                 return;
             }
-            
+
             // Create a postion the camera is aiming for based on the offset from the target.
             //Vector3 targetCamPos = target.position + offset;
 
@@ -46,7 +46,9 @@ namespace CompleteProject
             //transform.position = Vector3.Lerp (transform.position, targetCamPos, transform.position.y);
 
             //Iguala a posição
-            transform.position = target.position;
+            Vector3 position = target.position;
+            position.y += 1.5f;
+            transform.position = position;
             target.rotation = transform.rotation;
         }
     }
