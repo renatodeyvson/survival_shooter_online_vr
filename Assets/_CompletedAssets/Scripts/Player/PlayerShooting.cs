@@ -21,7 +21,8 @@ namespace CompleteProject
         Light gunLight;                                 // Reference to the light component.
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
-
+        bool IsLocalShoot = false;
+        bool veryfied = false;
 
         void Awake ()
         {
@@ -36,8 +37,26 @@ namespace CompleteProject
 			//faceLight = GetComponentInChildren<Light> ();
         }
 
+        void setIsLocalShoot()
+        {
+            localPlayer[] players = GameObject.FindObjectsOfType<localPlayer>();
+            for (int i = 0; i < players.Length; i++)
+            {
+                if (players[i].isLocalPlayer)
+                {
+                    IsLocalShoot = players[i].transform.Equals(transform.parent);
+                    veryfied = true;
+                }
+            }
+        }
+
         void Update ()
         {
+            if (!veryfied)
+                setIsLocalShoot();
+
+            if (!IsLocalShoot)
+                return;
 
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
